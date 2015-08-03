@@ -16,14 +16,14 @@ makeCacheMatrix <- function(x = matrix()) {
 
     ### define the function to get the value of the inverse-
     get <- function() x
-    setInverse <- function(inverse) m <<- mean
+    setInverse <- function(inverse) m <<- inverse
     getInverse <- function() m
 
     ## a list to return the functions contained in the first function
     
             list(set = set, get = get,
-                 setmean = setmean,
-                 getmean = getmean)
+                 setinverse = setinverse,
+                 getinverse = getinverse)
     }
 
     
@@ -32,7 +32,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## Write a short comment describing this function
 
-cachemean <- function(x, ...) {
+cacheSolve <- function(x, ...) {
 
 ### calls the function predefined in the previous function to get the inverse.
 m <- x$getInverse()
